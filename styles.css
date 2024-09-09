@@ -234,7 +234,6 @@ p {
   text-align: center;
   line-height: 60px;
   border-radius: 30px;
-  visibility: visible;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -246,6 +245,15 @@ p {
 
 .arrow:hover {
   background-color: #a40000;
+}
+
+.modal .arrow {
+  position: absolute; /* Зміна на absolute всередині модального вікна */
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 300px;
 }
 
 .gallery {
@@ -327,5 +335,23 @@ footer {
 
   nav ul li {
     margin: 5px;
+  }
+}
+/* Медіа-запити для мобільних пристроїв */
+@media (max-width: 768px) {
+  .arrow {
+    width: 90%;
+    max-width: 250px;
+    bottom: 20px;
+    right: 10px;
+    left: auto; /* Переконайтеся, що кнопка знаходиться праворуч на мобільних */
+  }
+
+  .modal .arrow {
+    width: 90%;
+    max-width: 250px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
