@@ -10,24 +10,24 @@ function openWebsiteModal(url) {
 // Закрити модальне вікно для веб-сайту і повернутися до папок
 function closeWebsiteModal() {
     const websiteFrame = document.getElementById("websiteFrame");
-    websiteFrame.src = ""; // Очищуємо iframe після закриття
+    websiteFrame.src = ""; 
     document.getElementById("websiteModal").style.display = "none";
   
 }
 
-// Повернутися до папок після перегляду веб-сайту
+
 function closeWebsiteModalAndShowFolders() {
     closeWebsiteModal();  // Закриваємо веб-сайт
     showFolders();  // Показуємо папки
 }
 
-// Повернутися на головну сторінку
+
 function goToHome() {
     document.querySelectorAll('.page').forEach(page => {
         page.classList.remove('active');
     });
     document.getElementById('home').classList.add('active');
-    closeWebsiteModal();  // Закриваємо модальне вікно з веб-сайтом, якщо відкрите
+    closeWebsiteModal(); 
 }
 
 let slideIndex = 0;
@@ -47,7 +47,6 @@ document.querySelectorAll('.nav ul li a').forEach(link => {
   });
 });
 
-// Автоматично відкриваємо домашню сторінку при завантаженні
 window.onload = function() {
   document.getElementById('home').classList.add('active');
 };
@@ -58,13 +57,12 @@ document.querySelector('.arrow').addEventListener('click', function(e) {
   goToHome();
 });
 
-// Показати галерею для вибраної папки
 function showImages(folder) {
     currentFolder = folder;
     const gallery = document.getElementById("gallery");
     gallery.innerHTML = ""; // Очищуємо галерею
 
-    items = getItemsForFolder(folder); // Завантажуємо елементи (зображення/сайти)
+    items = getItemsForFolder(folder); 
 
     items.forEach((item, index) => {
         if (item.type === 'image') {
@@ -87,7 +85,6 @@ function showImages(folder) {
     document.getElementById("backButton").style.display = "block";
 }   
 
-// Повернутися до папок
 function showFolders() {
     document.getElementById("folders").style.display = "flex";
     document.getElementById("gallery").style.display = "none";
@@ -96,7 +93,6 @@ function showFolders() {
     document.getElementById("backButton").style.display = "none";
 }
 
-// Відкрити модальне вікно для перегляду зображень
 function openModal(index) {
     slideIndex = index;
 
@@ -106,7 +102,7 @@ function openModal(index) {
     document.getElementById("modalBackButton").style.display = "block";
 }
 
-// Закрити модальне вікно
+
 function closeModal() {
     document.getElementById("modal").style.display = "none";
     document.getElementById("modalBackButton").style.display = "none";
@@ -116,19 +112,19 @@ function closeModalAndShowFolders() {
     closeModal();
     showFolders();
 }
-// Показати поточне зображення в модальному вікні
+
 function showSlide(index) {
     const modalImg = document.getElementById("modalImg");
     modalImg.src = items[index].src;
 }
 
-// Перемикати зображення вперед/назад
+
 function changeImage(n) {
     slideIndex = (slideIndex + n + items.length) % items.length;
     showSlide(slideIndex);
 }
 
-// Отримати елементи з папки (зображення та веб-сайти)
+
 function getItemsForFolder(folder) {
     const folderItems = {
         '2024-03': generateItemList('images/2024-03/', 40, 'jpg'),
