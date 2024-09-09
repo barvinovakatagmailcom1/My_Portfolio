@@ -1,0 +1,328 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.page.active {
+  left: 0;
+  opacity: 1;
+  z-index: 10;
+}
+
+.image {
+  width: 100%;
+  height: 100vh;
+  background-image: url("images/hoher-winkel-des-internet-kommunikationsnetzwerks-mit-kopierraum_23-2148779284.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-family: "Arial", sans-serif;
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 3;
+  text-align: center;
+  color: brown;
+}
+
+h2 {
+  font-family: "Arial", sans-serif;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 700;
+  text-align: center;
+  color: brown;
+  background-color: #d3d3d3;
+  border-radius: 25px;
+  padding: 10px 20px;
+  display: inline-block;
+  box-shadow: 0 4px 10px -2px rgba(139, 0, 0, 0.8);
+}
+
+
+h3 {
+  font-family: "Arial", sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-decoration: underline rgb(88, 88, 93);
+  color: brown;
+
+}
+
+p {
+  font-family: "Arial", sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-decoration: underline rgb(88, 88, 93);
+}
+
+.introduction, .container {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  overflow-y: auto; 
+  width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  border: 5px solid #ccc;
+  padding: 30px;
+  border-radius: 20px;
+  color: rgb(84, 84, 82);
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Оформлення кнопок */
+#modalBackButton {
+  background-color: #888888; 
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 200px; 
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+
+}
+
+#modalBackButton:hover {
+  background-color: #a40000;
+}
+
+#backButton {
+  margin-top: 20px;
+  padding: 10px 30px;
+  background-color: #d3d3d3;
+  color: #333;
+  border-radius: 25px;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px -2px rgba(139, 0, 0, 0.8);
+}
+
+#backButton:hover {
+  background-color: #a40000;
+  color: white;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding-top: 50px;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.modal iframe {
+  width: 80%;
+  height: 500px;
+  max-width: 800px;
+  max-height: 600px;
+  border-radius: 10px;
+
+}
+
+#websiteFrame {
+  width: 80%;  
+  height: 80%;
+  max-width: 1000px;
+  max-height: 800px;
+  border-radius: 2px solid #ccc;
+  transform: translateX(-50%);
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.6s ease;
+  user-select: none;
+  border-radius: 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Кнопка "Back to Home" на сторінці */
+.arrow {
+  display: block;
+  width: 150px;
+  height: 60px;
+  background-color: #8B0000;
+  color: white;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 30px;
+  visibility: visible;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  font-size: 18px;
+  z-index: ;
+  
+}
+
+.arrow:hover {
+  background-color: #a40000;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.gallery img, .gallery a {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery a:hover {
+  text-decoration: underline;
+}
+
+.folder {
+  background-color: #8B0000;
+  color: white;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.folder:hover {
+  background-color: #a40000;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #8B0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #a40000;
+}
+
+/* Стилі для футера */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f1f1f1; 
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  color: #333; 
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+@media (max-width: 768px) {
+  .service-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  nav ul {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 5px;
+  }
+}

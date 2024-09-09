@@ -1,0 +1,162 @@
+html {
+  scroll-behavior: smooth; /* Плавна прокрутка */
+}
+
+/* Загальний стиль для всього документа */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Стиль для заголовків */
+h1, h2 {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Підкреслення заголовків */
+h1::after, h2::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: #d3d3d3; /* Світло-сірий колір */
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+}
+
+/* Підсвічування заголовків */
+h1:hover, h2:hover {
+  background-color: #f0f0f0; /* Світло-сіре підсвічування */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Заголовок на головній сторінці (в header) */
+header h1 {
+  color: blue; /* Синій заголовок на головній сторінці */
+}
+
+/* Заголовки на другорядних сторінках */
+.container h2 {
+  color: red; /* Червоні заголовки на другорядних сторінках */
+}
+
+/* Стиль для header */
+header {
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 100vh; /* Висота на весь екран */
+}
+
+/* Фонова картинка в header */
+.image {
+  background-image: url('images/hoher-winkel-des-internet-kommunikationsnetzwerks-mit-kopierraum_23-2148779284.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+/* Стиль для навігаційного меню */
+.nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 0;
+}
+
+/* Вирівнювання елементів меню */
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Стиль для секції привітання на головній сторінці */
+.introduction {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.introduction h1 {
+  font-size: 50px;
+  margin: 0;
+}
+
+.introduction p {
+  font-size: 24px;
+}
+
+/* Стиль для контейнерів на другорядних сторінках */
+.container {
+  padding: 100px 20px;
+  text-align: center;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+/* Стиль для параграфів */
+p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Стиль для футера */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+/* Стиль для стрілочки, що повертає на головну сторінку */
+.arrow {
+  display: block;
+  width: 60px; /* Збільшено розмір */
+  height: 60px; /* Збільшено розмір */
+  background-color: #8B0000; /* Темно-червоний колір */
+  color: white;
+  text-align: center;
+  line-height: 60px; /* Центрування тексту всередині */
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.arrow:hover {
+  background-color: #a40000; /* Трохи світліший червоний при наведенні */
+}
