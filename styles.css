@@ -98,6 +98,16 @@ p {
   max-height: 100%;
   box-sizing: border-box;
 }
+.introduction {
+  padding-top: 10px; /* Додаємо трохи відступу зверху для вирівнювання */
+  margin-top: 0; /* Відсутність зайвого відступу зверху */
+}
+
+.introduction p {
+  margin-top: 10px; /* Зменшуємо відступ зверху для тексту */
+  padding-top: 0;
+  line-height: 1.6; /* Налаштовуємо міжрядковий інтервал для кращого вигляду */
+}
 
 .container {
   border: 5px solid #ccc;
