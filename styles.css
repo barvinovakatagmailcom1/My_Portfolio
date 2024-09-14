@@ -230,7 +230,6 @@ p {
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-
 /* Кнопка "Back to Home" на сторінці */
 .arrow {
   display: block;
@@ -254,8 +253,13 @@ p {
   background-color: #a40000;
 }
 
+#home .arrow {
+  display: none;
+}
+
+
 .modal .arrow {
-  position: absolute; /* Зміна на absolute всередині модального вікна */
+  position: absolute; 
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
@@ -265,15 +269,15 @@ p {
 
 @media (max-width: 768px) {
   .arrow {
-    width: 120px; /* Зменшуємо ширину кнопки на мобільних */
-    height: 40px; /* Зменшуємо висоту кнопки */
-    font-size: 14px; /* Зменшуємо розмір шрифту */
-    line-height: 40px; /* Вирівнюємо текст всередині кнопки */
-    top: 10px; /* Переміщуємо кнопку у верхню частину */
-    right: 10px; /* Встановлюємо відступ праворуч */
-    left: auto; /* Вимикаємо лівий відступ */
-    bottom: auto; /* Вимикаємо нижній відступ */
-    position: fixed; /* Фіксуємо кнопку у верхньому правому куті */
+    width: 100px; 
+    height: 40px; 
+    font-size: 12px; 
+    line-height: 40px; 
+    top: 10px; 
+    right: 10px; 
+    left: auto; 
+    bottom: auto; 
+    position: fixed; 
     z-index: 10000;
   }
 
@@ -369,4 +373,5 @@ footer {
   nav ul li {
     margin: 5px;
  */
+
 

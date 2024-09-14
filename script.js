@@ -123,8 +123,6 @@ function changeImage(n) {
     slideIndex = (slideIndex + n + items.length) % items.length;
     showSlide(slideIndex);
 }
-
-
 function getItemsForFolder(folder) {
     const folderItems = {
         '2024-03': generateItemList('images/2024-03/', 40, 'jpg'),
